@@ -1,9 +1,9 @@
  <meta charset="UTF-8">
- <h1>Nuestra diferencia de edad es</h1>
+ <h1><big>Nuestra diferencia de edad es</big></h1>
 
 <script>
         function saltarLinea() {
-        document.write("<br><br><hr>");
+        document.write("<br>");
     }
 
     function imprimir(frase) {
@@ -15,7 +15,70 @@
     var miEdad= anhoActual-1967;
     var hermanoEdad= anhoActual-1966;
     var diferencia=miEdad - hermanoEdad;
-    imprimir("la diferencia de edad con mi hermano es " + saltarLinea() + diferencia);
+    imprimir("la diferencia de edad con mi hermano es "+ diferencia);
+    imprimir("casi gemelos");
+
+
+    //del profe y mis cambios 5 saltos
+
+    function saltarLinea2() {
+    // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir2(frase) {
+    document.write(frase);
+    saltarLinea2();
+}
+
+    imprimir2("la diferencia de edad con mi hermano es "+ diferencia);
+    imprimir2("casi gemelos");
+
+
+
+    //del profesor y mis cambios con hr
+
+    function saltarLinea3() {
+    // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+    document.write("<hr>");    
+    document.write("<br>");    
+    document.write("<br>");    
+}
+
+function imprimir3(frase) {
+    document.write(frase);
+    saltarLinea3();
+}
+
+    imprimir3("la diferencia de edad con mi hermano es "+ diferencia);
+    imprimir3("casi gemelos");
+
+
+//paso 3 con big
+    function saltarLinea4() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+    document.write("<hr>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir4(frase) {
+    document.write("<big>" + frase + "</big>");
+    saltarLinea4();
+}
+
+    imprimir4("la diferencia de edad con mi hermano es "+ diferencia);
+    imprimir4("casi gemelos");
 
 
 
