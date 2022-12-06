@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+    //concatena mal usado el prompt
+    var invitados = prompt("Número de invitados");
+    var vips = prompt("Número de invitados VIP's");
+
+    var total = invitados + vips;
+
+    imprimir("El total de invitados es " + total);
+    //resultaado=2010                  con 20 y 10
+    //error dos
+    var invitados = parseInt(prompt("Número de invitados"));
+    var vips = prompt("Número de invitados VIP's");
+
+    var total = invitados + vips;
+
+    imprimir("El total de invitados es " + total);
+    //resultaado=2010            con 20 y 10
+
+    //error tres
+      //resultaado=2010            con 20 y 10
+      var invitados = prompt("Número de invitados");
+    var vips = prompt("Número de invitados VIP's");
+
+    var total = parseInt(invitados + vips);
+    imprimir("El total de invitados es " + total);
+
+
+      //error 4
+      //resultaado=2010            con 20 y 10
+    var invitados = prompt(parseInt("Número de invitados"));
+    var vips = prompt(parseInt("Número de invitados VIP's"));
+
+    var total = invitados + vips;
+
+    imprimir("El total de invitados es " + total);
+
+     
+    //solucion
+    //resultaado=30            con 20 y 10
+    var invitados = parseInt(prompt("Número de invitados"));
+    var vips = parseInt(prompt("Número de invitados VIP's"));
+
+    var total = invitados + vips;
+
+    imprimir("El total de invitados es " + total);
+
+</script>
