@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<h1>PARES 1 A 100</h1>
+<script>
+
+function saltarLinea() {
+
+        document.write("<br>");
+    }
+
+ function imprimir(frase) {
+
+        document.write(frase);
+        saltarLinea();
+    }
+
+//el % es el residuo de una divicion, es decir contador es 1 y se divide por 2 el residuo no es cero
+
+var contador = 1;
+
+while(contador <= 100) {
+	if(contador%2==0){
+
+    imprimir(contador)
+}
+    contador = contador + 1;
+  }
+   imprimir("Fin");
+
+
+   //de un compañero
+     var contador = 2;
+
+    while (contador <= 100) {
+
+        imprimir(contador);
+        contador = contador + 2;
+
+    }
+
+    imprimir("Fin"); 
+
+</script>
