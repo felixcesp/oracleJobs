@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinar Numero</title>
+</head>
+<body>
+    <h3>Adivina el numero pensado por el programa</h3>
+    <input type="number">
+    <button>Ver</button>
+
+    <script>
+
+        let numero = Math.round(Math.random()*10); 
+        console.log(numero);   
+        let userIn = document.querySelector("input");
+        userIn.focus();
+
+        function verificar() {
+            if (parseInt(campo.value) == numero) alert("ACERTO !");
+            else alert("RESPUESTA INCORRECTA");
+            userIn.value="";
+            userIn.focus();
+        }
+
+        document.querySelector("button").onclick=verificar;
+
+    </script>
+</body>
+</html>

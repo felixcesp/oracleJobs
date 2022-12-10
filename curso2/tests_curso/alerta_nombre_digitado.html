@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Mostrar texto escrito</button>
+
+<script>
+    var input = document.querySelector("input");
+
+    function mostrarTexto() {
+
+        alert(input.value);
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = mostrarTexto;
+
+    /*explicacion
+    ¡Correcto! Cuando se llama a la función mostrarTexto, pasará como parámetro de la función alert el valor input.value. No podemos simplemente pasar input, porque el input corresponde a la etiqueta y queremos que su valor provenga de esa etiqueta. Por eso, pasamos input.value.
+
+    erroneos
+    <meta charset="UTF-8">
+
+<input/>
+<button>Mostrar texto escrito</button>
+
+<script>
+    var input = document.querySelector("input");
+
+    function mostrarTexto() {
+
+        alert(value);
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = mostrarTexto;
+
+
+¡Incorrecto! En este caso, estamos pasando al alert una variable value indefinida.
+
+
+
+erroneo dos
+<meta charset="UTF-8">
+
+<input/>
+<button>Mostrar texto escrito</button>
+
+<script>
+    var input = document.querySelector("input");
+
+    function mostrarTexto() {
+
+        alert(input);
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = mostrarTexto;
+
+
+¡Incorrecto! En este caso, estamos pasando al alert la etiqueta input, pero no su contenido.
+</script>
