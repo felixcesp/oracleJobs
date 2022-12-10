@@ -1,0 +1,61 @@
+<meta charset="utf-8">
+
+<input type="" name=""/>
+<button>Verificar si acertó con el secreto</button>
+
+<script type="text/javascript">
+
+    function saltarLinea () {
+
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+        document.write("<hr>");    
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");    
+    }
+
+    function imprimir (frase) {
+
+        document.write("<big>" + frase + "</big>")
+        saltarLinea()
+    }
+
+    var secretos = [3, 5, 7, 9];
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verificar () {
+
+        var encontrado = false;
+
+        for (var posicion = 0; posicion < 4; posicion++){
+
+            if (parseInt(input.value) == secretos[posicion]) {
+
+                  alert("Usted acertó");
+                  encontrado = true;
+                  break;
+              // } else {
+                //     alert("Usted erró");
+
+                }
+
+            }
+
+            if(encontrado == false) {
+                alert("Usted erró");
+
+            }
+
+            input.value = "";
+            input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = verificar;
+
+
+</script>
