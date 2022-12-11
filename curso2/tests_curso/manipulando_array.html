@@ -1,0 +1,72 @@
+<meta charset="UTF-8">
+
+<h1>Programa: Juego Secreto</h1>
+
+<input/> <!--vamos a pedir un dato-->
+
+<button>Verificar si acerto con el secreto</button>
+
+
+<script>
+
+function aleatorio () {
+
+    return Math.round(Math.random() * 10);
+}
+
+function sortearNumeros(cantidad) {
+
+    var secretos = []; // creo un array vacio donde luego se cargaran los numeros aleatorios.
+    var contador = 1;  // creo la variable contador para poder iniciar en 1 en el while.
+
+    while (contador <= cantidad) {
+
+        numeroAleatorio = aleatorio();  
+        secretos.push(numeroAleatorio);  // push le pasa los valores generados en cada vuelta a secretos.
+        contador++;  // aumento en 1 el contador, que va a frenar cuando sea menor o igual a CANTIDAD que esta puesto en sortearNumeros ()
+    }
+
+    return secretos;
+
+}
+
+var secretos = sortearNumeros(4);  //cantidad de número que va a sortear.
+
+console.log(secretos);  // se abre herramienta de desarrollador para verificar sorteo.
+
+var input = document.querySelector("input"); //función querySelector es un puente entre HTML y JS; esto nos trae el input de html a JS
+input.focus();   // estando aca al principio va a hacer que el cursos apenas abra la pagina ya aparezca posicionado para escribir el numero en el lugar correspondiente. 
+                 // para que el cursor se focalize, osea que automaticamente nos deje denuevo en esa casilla.
+
+
+function verificar () {
+
+    var encontrado = false; 
+
+    //for (var posicion = 0 ; posicion < 4 ; posicion++) { // este va hasta posicion 4, pero si quiero agregar mas elementos me conviene usar lenght, sino siempre estaria limitado a 4 elementos, salvo que el programador se siente a cambiarlo.
+
+    for (var posicion = 0 ; posicion < secretos.length ; posicion++) {  // por eso mejor aca le digo revisa en secretos.lenght osea del principio al fin del array, osea todos los elementos que contiene. 
+
+        if (parseInt(input.value) == secretos[posicion]) {
+
+            alert("¡Perfecto acertaste!");
+            encontrado = true;
+            break;
+
+        }
+
+    }
+
+    if (encontrado == false) {
+
+        alert ("Erraste!");
+    }
+
+    input.value = "";  // para que luego de verificar quede nuevamente vacio, osea q me borre el numero que puse.
+    input.focus();     // para que el cursor se focalize, osea que automaticamente nos deje denuevo en esa casilla.
+}
+
+var button = document.querySelector("button");  // capturar el objeto button definido en html.
+button.onclick = verificar;  // que cuando uno haga clic en el boton nos traiga la funcion verificar. Lo ponemos sin parentesis para que se ejecute al mo mento de hacer clic solamente.
+
+</script>
