@@ -1,0 +1,92 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400); 
+
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(x + "," + y); 
+        var devolver = x;
+        var devolver2 = y;
+        var complete=[devolver, devolver2]
+        darXy(complete);//se la envio a una funcion para que me guarde los valores  
+        console.log(devolver)
+         console.log(devolver2)
+        
+        return complete;
+          
+    }
+  
+     
+     //creo esta funcion para tomar los valores de la linea 21
+
+    function darXy(complete){
+           var sera=[];
+           sera.push(complete);
+           console.log(complete);
+           console.log(sera);
+           return sera;     
+    }
+      
+    
+      
+
+    pantalla.onclick = dibujarCirculo;
+    
+
+
+    var contador=1
+    function alterarColor(evento) {  
+          var colorchange=["blue", "red" , "green"]; 
+          console.log(colorchange.length) 
+          //llamo la funcion para obtener las cordenadas no funciona
+          var qye = darXy()
+          console.log(qye)
+
+         //llamo el return de la funcion y tampoco funciona
+         var casa=dibujarCirculo([]);
+          console.log(parseInt(casa));
+
+
+
+
+        for (var i=0; i < 3; i++){
+        console.log(i);
+        if (contador===i){
+        var escojer= colorchange[contador] 
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;  
+       
+        pincel.fillStyle = escojer;
+        pincel.beginPath();
+        pincel.arc(x, y,10,0,2*3.14);
+        pincel.fill();
+
+          }
+       }
+       if(contador >= colorchange.length){
+
+        contador =0
+      }else{
+            contador= contador+1};
+       console.log(contador);
+
+       alert("Funcionó");
+       
+        return false;
+       
+      }
+
+    pantalla.oncontextmenu = alterarColor;
+   
+
+</script> 

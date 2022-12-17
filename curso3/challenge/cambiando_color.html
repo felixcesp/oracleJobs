@@ -1,0 +1,100 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400); 
+
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;//da el click dentro del canvas que es un rectangulo en x
+        var y = evento.pageY - pantalla.offsetTop;//da el click dentro del canvas que es un rectangulo en y    
+        pincel.fillStyle = "blue";//color del circulo o la figura
+        pincel.beginPath();//para que inicie el dibujo de cualquier figure
+        pincel.arc(x,y,10,0,2*3.14);//donde aparece y dimenciones
+        pincel.fill();//dibuja el circulo
+        console.log(x + "," + y);  //muestra las cordenas 
+        var devolver = x;
+        var devolver2 = y;
+        //darXy(devolver, devolver2);
+        var complete=[devolver, devolver2]
+        darXy(complete);
+        
+        
+        console.log(devolver)
+         console.log(devolver2)
+        
+        return complete;
+          
+    }
+  
+          function darXy(complete){
+          var sera=[];
+          //var sera=complete
+          sera.push(complete);
+          //sera.push(devolver,devolver2);
+           //console.log(devolver);
+           //console.log(devolver2);
+            console.log(complete);
+           console.log(sera);
+           return sera;     
+    }
+      
+    
+      
+
+    pantalla.onclick = dibujarCirculo;//aca llama la funcion para que se origine despues del click las acciones d ela funcion
+    
+
+
+    var contador=1
+    function alterarColor(evento) {
+   // var cordenadas=darXy(sera);
+  //  console.log(cordenadas);*/
+            // 
+     
+      var colorchange=["blue", "red" , "green"]; 
+      console.log(colorchange.length) 
+  
+   var qye = darXy()
+   console.log(qye)
+   // var casa=dibujarCirculo();
+
+
+     var casa=dibujarCirculo([]);
+    //  var corx=dibujarCirculo(x,y);
+       console.log(parseInt(casa));
+
+      for (var i=0; i < 3; i++){
+
+        console.log(i);
+        if (contador===i){
+        var escojer= colorchange[contador] 
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;  
+       
+        pincel.fillStyle = escojer;
+        pincel.beginPath();
+        pincel.arc(x, y,10,0,2*3.14);
+        pincel.fill();
+
+       }
+}
+  if(contador >= colorchange.length){
+
+        contador =0
+      }else{
+            contador= contador+1};
+       console.log(contador);
+
+       alert("Funcionó");
+       
+        return false;
+       
+    }
+
+    pantalla.oncontextmenu = alterarColor;
+   
+
+</script> 
